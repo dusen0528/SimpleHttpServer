@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HttpRequset {
+public class HttpRequest {
 
     private String method;
     private String url;
@@ -15,12 +15,12 @@ public class HttpRequset {
     
     Socket client;
 
-    public HttpRequset(Socket client) {
+    public HttpRequest(Socket client) {
         this.client = client;
 
     }
     
-    public void parser(Socket client) {
+    public void parser() {
         try (
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
         ) {
