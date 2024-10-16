@@ -1,8 +1,10 @@
-package com.nhnacademy.http;
+package com.nhnacademy;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import com.nhnacademy.http.HttpRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,10 +26,10 @@ public class SimpleHttpServer {
 
     public void start() {
         try {
-            while(true){
+            while (true) {
                 client = serverSocket.accept();
-
-                
+                HttpRequest request = new HttpRequest(client);
+                request.parser();
             }
         } catch (Exception e) {
         }
